@@ -8,6 +8,8 @@
 #include <string.h>
 #include "movie.h"
 #include "database.h"
+#include "movie.cpp"
+#include "database.cpp"
 
 using namespace std;
 
