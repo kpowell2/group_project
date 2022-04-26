@@ -86,9 +86,14 @@ movie getStuff(stringstream& str){
     string origLanguage = word;
     //cout << origLanguage << endl;
 
-    getline(str,word,'$');
+    getline(str,word,'"');
     string origTitle = word;
+    origTitle.pop_back();
     //cout << origTitle << endl;
+	
+    getline(str,word,'"');
+    string overView = word;
+    //cout << overView << endl;
 
     getline(str,word,',');
     getline(str,word,',');
