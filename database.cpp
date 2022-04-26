@@ -56,3 +56,21 @@ movie database::getMovie(string name){
     return curMovie;
 }
 
+int database::getPosition(movie check){
+    movie curMovie;
+    int vecSize = (int)data.size();
+    string name = curMovie.getTitles();
+    for(int i = 0; i < vecSize; i++){
+        curMovie = data[i];
+        string curTitle = curMovie.getTitles();
+        if(iequals(name, curTitle)){
+            return i;
+        }
+    }
+    return -1;
+}
+
+void database::analyze(){
+    sort(data.begin(),data.end(), revenueComp);
+}
+
