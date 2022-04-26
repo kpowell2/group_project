@@ -19,6 +19,7 @@ movie::movie()
     title = "";
     voteAvg = 0;
     voteCount = 0;
+    revenuePerDollar = 0;
 }
 
 movie::movie(int budget1, unordered_map<int,string> genres1, int id1, unordered_map<int,string> keywords1, string origLanguage1,
@@ -41,6 +42,7 @@ movie::movie(int budget1, unordered_map<int,string> genres1, int id1, unordered_
     title = title1;
     voteAvg = voteAvg1;
     voteCount = voteCount1;
+    revenuePerDollar = revenue / budget;
 }
 
 string movie::getTitles() const{
@@ -88,6 +90,9 @@ int movie::getVoteAvg() const {
 int movie::getVoteCount() const {
     return voteCount;
 }
+long long int movie::getRevenuePerDollar() {
+    return revenuePerDollar;
+}
 
 
 void movie::setTitle(string newTitle) {
@@ -95,6 +100,7 @@ void movie::setTitle(string newTitle) {
 }
 void movie::setBudget(int newBudget) {
     budget = newBudget;
+    updateRevPerDollar();
 }
 void movie::setGenres(unordered_map<int, string> newGenres) {
     genres = newGenres;
@@ -122,6 +128,7 @@ void movie::setRelease(string newRelease) {
 }
 void movie::setRevenue(long long int newRevenue) {
     revenue = newRevenue;
+    updateRevPerDollar();
 }
 void movie::setRuntime(int newRuntime) {
     runtime = newRuntime;
@@ -134,4 +141,7 @@ void movie::setVoteAvg(int newVoteAvg) {
 }
 void movie::setVoteCount(int newVoteCount) {
     voteCount = newVoteCount;
+}
+void movie::updateRevPerDollar() { //updates the revenuePerDollar whenever a change is made to the budget or revenue
+    revenuePerDollar = revenue / budget;
 }

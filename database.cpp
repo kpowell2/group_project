@@ -71,6 +71,44 @@ int database::getPosition(movie check){
 }
 
 void database::analyze(){
-    sort(data.begin(),data.end(), revenueComp);
+    //sort(data.begin(),data.end(), revenueComp);
+    cout << "lmaoooo" << endl;
+}
+
+void database::sortMoviesRPD() { //sorts data based on its RPD (revenuePerDollar)
+
+    unsigned int i;
+    unsigned int j;
+    movie temp;
+
+    for (i = 1; 1 < data.size(); i++) { //runs for the length of data, starting at index 1
+
+        j = i;
+
+        while (j > 0 && (data[j - 1].getRevenuePerDollar() <= data[j].getRevenuePerDollar())) { //runs as long as the value in j-1 is less than or equal to the value at j. stop if j <= 0 as this means that there is no index before j 
+
+            temp = data[j]; //stores the values of j in a temp movie object
+
+            data[j] = data[j - 1]; //sets the value at data[j] to be equal to the value at data[j-1]
+
+            data[j - 1] = temp;//sets the value at data[j-1] to be equal to the value of temp
+
+            //after running, data[j] and data[j-1] have swapped values
+
+            j--;
+
+        }
+
+    }
+}
+
+void database::printMovies() { //prints out the list of movies. to be called after using sortMoviesRPD
+    unsigned int i;
+
+    cout << "Below are the movies, sorted by RPD(revenue per dollar spent on budget)" << endl;
+
+    for (i = 0; i < data.size(); i++) {
+        cout << "Title: " << data[i].getTitles() << ", Revenue: " << data[i].getRevenue() << ", Budget: " << data[i].getBudget() << ", RPD: " << data[i].getRevenuePerDollar() << endl;
+    }
 }
 

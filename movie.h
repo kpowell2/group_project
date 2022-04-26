@@ -32,6 +32,7 @@ class movie
         string getStatus() const; //return status
         int getVoteAvg() const; //return voteAvg
         int getVoteCount() const; //return voteCount
+        long long int getRevenuePerDollar(); //return revenuePerDollar
 
 
         void setTitle(string newTitle); //newTitle --> title
@@ -68,6 +69,9 @@ class movie
         string title;
         int voteAvg;
         int voteCount;
+        long long int revenuePerDollar; //stores a value containing the revenue divided by the budget
+
+        void updateRevPerDollar(); //updates the revenuePerDollar whenever a change is made to the budget or revenue
 };
 
 #endif // MOVIE_H

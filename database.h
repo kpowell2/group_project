@@ -22,6 +22,8 @@ class database
         movie getMovie(string name);
         int getPosition(movie check);
         void analyze();
+        void sortMoviesRPD();
+        void printMovies();
 
     protected:
 
