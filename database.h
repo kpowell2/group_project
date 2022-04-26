@@ -20,6 +20,8 @@ class database
         database(vector<movie>);
         void showTitles();
         movie getMovie(string name);
+        int getPosition(movie check);
+        void analyze();
 
     protected:
 
