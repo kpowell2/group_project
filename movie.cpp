@@ -43,50 +43,95 @@ movie::movie(int budget1, unordered_map<int,string> genres1, int id1, unordered_
     voteCount = voteCount1;
 }
 
-string movie::getTitles(){
+string movie::getTitles() const{
     return title;
 }
-
-int movie::getBudget(){
+int movie::getBudget() const {
     return budget;
 }
-
-unordered_map<int,string> movie::getGenres(){
+unordered_map<int, string> movie::getGenres() const {
     return genres;
 }
-
-unordered_map<int,string> movie::getKeyWords(){
+int movie::getID() const {
+    return id;
+}
+unordered_map<int, string> movie::getKeywords() const {
     return keywords;
 }
-
-unordered_map<int,string> movie::getCompanies(){
-    return keywords;
-}
-
-string movie::getOrigLang(){
+string movie::getOrigLanguage() const {
     return origLanguage;
 }
-
-long long int movie::getRevenue(){
-    return revenue;
+string movie::getOrigTitle() const {
+    return origTitle;
 }
-
-double movie::getPopularity(){
+double movie::getPopularity() const {
     return popularity;
 }
-
-string movie::getReleaseDate(){
+unordered_map<int, string> movie::getPCompanies() const {
+    return pCompanies;
+}
+string movie::getRelease() const {
     return releaseDate;
 }
-
-string movie::getStatus(){
+long long int movie::getRevenue() const {
+    return revenue;
+}
+int movie::getRuntime() const {
+    return runtime;
+}
+string movie::getStatus() const {
     return status;
 }
-
-int movie::getVoteAvg(){
+int movie::getVoteAvg() const {
     return voteAvg;
 }
-
-int movie::getVoteCount(){
+int movie::getVoteCount() const {
     return voteCount;
+}
+
+
+void movie::setTitle(string newTitle) {
+    title = newTitle;
+}
+void movie::setBudget(int newBudget) {
+    budget = newBudget;
+}
+void movie::setGenres(unordered_map<int, string> newGenres) {
+    genres = newGenres;
+}
+void movie::setID(int newID) {
+    id = newID;
+}
+void movie::setKeywords(unordered_map<int, string> newKeywords) {
+    keywords = newKeywords;
+}
+void movie::setOrigLanguage(string newLang) {
+    origLanguage = newLang;
+}
+void movie::setOrigTitle(string newTitle) {
+    origTitle = newTitle;
+}
+void movie::setPopularity(double newPopularity) {
+    popularity = newPopularity;
+}
+void movie::setPCompanies(unordered_map<int, string> newCompanies) {
+    pCompanies = newCompanies;
+}
+void movie::setRelease(string newRelease) {
+    releaseDate = newRelease;
+}
+void movie::setRevenue(long long int newRevenue) {
+    revenue = newRevenue;
+}
+void movie::setRuntime(int newRuntime) {
+    runtime = newRuntime;
+}
+void movie::setStatus(string newStatus) {
+    status = newStatus;
+}
+void movie::setVoteAvg(int newVoteAvg) {
+    voteAvg = newVoteAvg;
+}
+void movie::setVoteCount(int newVoteCount) {
+    voteCount = newVoteCount;
 }
